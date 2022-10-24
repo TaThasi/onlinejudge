@@ -44,7 +44,7 @@
 | Ctrl + Shift + P                                | 打开插入PRE对话框                 | Open Preformatted text dialog                      |
 | Ctrl + Shift + Q                                | 插入引用                          | Insert blockquotes                                 |
 | Ctrl + Shift + R / Shift + Command + Option + F | 全部替换                          | Replace all                                        |
-| Ctrl + Shift + S                                | 插入删除线                        | Insert strikethrough                               |
+| Ctrl + Shift + S                                | 插入Strike                        | Insert strikethrough                               |
 | Ctrl + Shift + T                                | 打开插入表格对话框                | Open table dialog                                  |
 | Ctrl + Shift + U                                | 将所选文字转成大写                | Selection text convert to uppercase                |
 | Shift + Alt + C                                 | 插入```代码                       | Insert code blocks (```)                           |

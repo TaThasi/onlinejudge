@@ -8,16 +8,10 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use yii\widgets\InputWidget;
 
-/**
- * @author Shiyang <dr@shiyang.me>
- */
+
 class Editormd extends InputWidget
 {
-    /**
-     * Markdown options you want to override
-     * See https://github.com/pandao/editor.md
-     * @var array
-     */
+
     public $clientOptions = [];
     /**
      * Default options that will be passed to the editor
