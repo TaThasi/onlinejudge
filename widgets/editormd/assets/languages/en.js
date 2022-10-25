@@ -82,7 +82,7 @@
                 codeBlock : {
                     title             : "Code block",         
                     selectLabel       : "Languages: ",
-                    selectDefaultText : "select a code language...",
+                    selectDefaultText : "Select a code language...",
                     otherLanguage     : "Other languages",
                     unselectedLanguageAlert : "Error: Please select the code language.",
                     codeEmptyAlert    : "Error: Please fill in the code content."

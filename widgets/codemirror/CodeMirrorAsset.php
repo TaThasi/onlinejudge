@@ -3,9 +3,6 @@ namespace app\widgets\codemirror;
 
 use yii\web\AssetBundle;
 
-/**
- * @author Shiyang <dr@shiyang.me>
- */
 class CodeMirrorAsset extends AssetBundle
 {
     public $sourcePath = '@app/widgets/codemirror/assets';

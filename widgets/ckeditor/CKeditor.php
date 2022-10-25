@@ -6,9 +6,6 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\widgets\InputWidget;
 
-/**
- * @author Shiyang <dr@shiyang.me>
- */
 class CKeditor extends InputWidget
 {
     /**

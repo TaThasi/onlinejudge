@@ -5,11 +5,6 @@ use Yii;
 use yii\base\Model;
 use app\models\User;
 
-/**
- * Signup form
- *
- * @author Shiyang <dr@shiyang.me>
- */
 class SignupForm extends Model
 {
     public $username;

@@ -6,19 +6,11 @@ use yii\widgets\InputWidget;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 
-/**
- * @author Shiyang <dr@shiyang.me>
- */
 class LayDate extends InputWidget
 {
-    /**
-     * laydate 的配置
-     * @see http://sentsin.com/layui/laydate/api.html
-     */
+
     public $clientOptions = [];
-    /**
-     * 默认input配置
-     */
+   
     protected $_options;
     public function init()
     {
@@ -42,9 +34,6 @@ class LayDate extends InputWidget
         $this->registerClientScript();
     }
 
-    /**
-     * 注册脚本
-     */
     protected function registerClientScript()
     {
         $view = $this->getView();

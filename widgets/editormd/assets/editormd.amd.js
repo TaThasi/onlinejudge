@@ -13,7 +13,6 @@
 ;(function(factory) {
     "use strict";
     
-	// CommonJS/Node.js
 	if (typeof require === "function" && typeof exports === "object" && typeof module === "object")
     { 
         module.exports = factory;
@@ -343,7 +342,7 @@
                     title    : "Add link",
                     url      : "URL",
                     urlTitle : "URL Title",
-                    urlEmpty : "Error: Please fill in the URL address."
+                    urlEmpty : "Error: Please fill in the URL."
                 },
                 referenceLink : {
                     title    : "Add reference link",
@@ -366,22 +365,22 @@
                     formatNotAllowed : "Error: Only image files are allowed to be uploaded. The allowed image file formats are:"
                 },
                 preformattedText : {
-                    title             : "添加预格式文本或代码块", 
-                    emptyAlert        : "错误：请填写预格式文本或代码的内容。"
+                    title             : "Add pre-formatted text", 
+                    emptyAlert        : "Error: Please fill in the content of pre-formatted text."
                 },
                 codeBlock : {
-                    title             : "添加代码块",                    
-                    selectLabel       : "代码语言：",
-                    selectDefaultText : "请选择代码语言",
-                    otherLanguage     : "其他语言",
-                    unselectedLanguageAlert : "错误：请选择代码所属的语言类型。",
-                    codeEmptyAlert    : "错误：请填写代码内容。"
+                    title             : "Add code block",                    
+                    selectLabel       : "Language:",
+                    selectDefaultText : "Please select language",
+                    otherLanguage     : "Other language",
+                    unselectedLanguageAlert : "Error: Please select the language type the code belongs to.",
+                    codeEmptyAlert    : "Error: Please fill in the code content."
                 },
                 htmlEntities : {
-                    title : "HTML 实体字符"
+                    title : "HTML entities"
                 },
                 help : {
-                    title : "使用帮助"
+                    title : "Help"
                 }
             }
         }
@@ -407,15 +406,6 @@
             preview    : false,
             fullscreen : false
         },
-        
-        /**
-         * 构造函数/实例初始化
-         * Constructor / instance initialization
-         * 
-         * @param   {String}   id            编辑器的ID
-         * @param   {Object}   [options={}]  配置选项 Key/Value
-         * @returns {editormd}               返回editormd的实例对象
-         */
         
         init : function (id, options) {
             
@@ -548,13 +538,6 @@
             return this;
         },
         
-        /**
-         * 所需组件加载队列
-         * Required components loading queue
-         * 
-         * @returns {editormd}  返回editormd的实例对象
-         */
-        
         loadQueues : function() {
             var _this        = this;
             var settings     = this.settings;
@@ -665,12 +648,6 @@
             return this;
         },
         
-        /**
-         * 设置 Editor.md 的整体主题，主要是工具栏
-         * Setting Editor.md theme
-         * 
-         * @returns {editormd}  返回editormd的实例对象
-         */
         
         setTheme : function(theme) {
             var editor      = this.editor;
@@ -683,13 +660,6 @@
             
             return this;
         },
-        
-        /**
-         * 设置 CodeMirror（编辑区）的主题
-         * Setting CodeMirror (Editor area) theme
-         * 
-         * @returns {editormd}  返回editormd的实例对象
-         */
         
         setEditorTheme : function(theme) {  
             var settings   = this.settings;  
@@ -705,25 +675,12 @@
             return this;
         },
         
-        /**
-         * setEditorTheme() 的别名
-         * setEditorTheme() alias
-         * 
-         * @returns {editormd}  返回editormd的实例对象
-         */
         
         setCodeMirrorTheme : function (theme) {            
             this.setEditorTheme(theme);
             
             return this;
         },
-        
-        /**
-         * 设置 Editor.md 的主题
-         * Setting Editor.md theme
-         * 
-         * @returns {editormd}  返回editormd的实例对象
-         */
         
         setPreviewTheme : function(theme) {  
             var preview     = this.preview;
@@ -736,13 +693,6 @@
             
             return this;
         },
-        
-        /**
-         * 配置和初始化CodeMirror组件
-         * CodeMirror initialization
-         * 
-         * @returns {editormd}  返回editormd的实例对象
-         */
         
         setCodeMirror : function() { 
             var settings         = this.settings;
@@ -806,24 +756,12 @@
 
             return this;
         },
-        
-        /**
-         * 获取CodeMirror的配置选项
-         * Get CodeMirror setting options
-         * 
-         * @returns {Mixed}                  return CodeMirror setting option value
-         */
+
         
         getCodeMirrorOption : function(key) {            
             return this.cm.getOption(key);
         },
-        
-        /**
-         * 配置和重配置CodeMirror的选项
-         * CodeMirror setting options / resettings
-         * 
-         * @returns {editormd}  返回editormd的实例对象
-         */
+
         
         setCodeMirrorOption : function(key, value) {
             
@@ -831,40 +769,21 @@
             
             return this;
         },
-        
-        /**
-         * 添加 CodeMirror 键盘快捷键
-         * Add CodeMirror keyboard shortcuts key map
-         * 
-         * @returns {editormd}  返回editormd的实例对象
-         */
+
         
         addKeyMap : function(map, bottom) {
             this.cm.addKeyMap(map, bottom);
             
             return this;
         },
-        
-        /**
-         * 移除 CodeMirror 键盘快捷键
-         * Remove CodeMirror keyboard shortcuts key map
-         * 
-         * @returns {editormd}  返回editormd的实例对象
-         */
+
         
         removeKeyMap : function(map) {
             this.cm.removeKeyMap(map);
             
             return this;
         },
-        
-        /**
-         * 跳转到指定的行
-         * Goto CodeMirror line
-         * 
-         * @param   {String|Intiger}   line      line number or "first"|"last"
-         * @returns {editormd}                   返回editormd的实例对象
-         */
+
         
         gotoLine : function (line) {
             
@@ -942,12 +861,6 @@
             return this;
         },
         
-        /**
-         * 扩展当前实例对象，可同时设置多个或者只设置一个
-         * Extend editormd instance object, can mutil setting.
-         * 
-         * @returns {editormd}                  this(editormd instance object.)
-         */
         
         extend : function() {
             if (typeof arguments[1] !== "undefined")
@@ -968,14 +881,6 @@
             return this;
         },
         
-        /**
-         * 设置或扩展当前实例对象，单个设置
-         * Extend editormd instance object, one by one
-         * 
-         * @param   {String|Object}   key       option key
-         * @param   {String|Object}   value     option value
-         * @returns {editormd}                  this(editormd instance object.)
-         */
         
         set : function (key, value) {
             
@@ -988,15 +893,7 @@
 
             return this;
         },
-        
-        /**
-         * 重新配置
-         * Resetting editor options
-         * 
-         * @param   {String|Object}   key       option key
-         * @param   {String|Object}   value     option value
-         * @returns {editormd}                  this(editormd instance object.)
-         */
+
         
         config : function(key, value) {
             var settings = this.settings;
@@ -1017,14 +914,6 @@
             return this;
         },
         
-        /**
-         * 注册事件处理方法
-         * Bind editor event handle
-         * 
-         * @param   {String}     eventType      event type
-         * @param   {Function}   callback       回调函数
-         * @returns {editormd}                  this(editormd instance object.)
-         */
         
         on : function(eventType, callback) {
             var settings = this.settings;
@@ -1037,14 +926,6 @@
             return this;
         },
         
-        /**
-         * 解除事件处理方法
-         * Unbind editor event handle
-         * 
-         * @param   {String}   eventType          event type
-         * @returns {editormd}                    this(editormd instance object.)
-         */
-        
         off : function(eventType) {
             var settings = this.settings;
             
@@ -1056,13 +937,6 @@
             return this;
         },
         
-        /**
-         * 显示工具栏
-         * Display toolbar
-         * 
-         * @param   {Function} [callback=function(){}] 回调函数
-         * @returns {editormd}  返回editormd的实例对象
-         */
         
         showToolbar : function(callback) {
             var settings = this.settings;

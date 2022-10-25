@@ -305,22 +305,22 @@
                     formatNotAllowed : "Error: Only image files are allowed to be uploaded. The allowed image file formats are:"
                 },
                 preformattedText : {
-                    title             : "添加预格式文本或代码块", 
-                    emptyAlert        : "错误：请填写预格式文本或代码的内容。"
+                    title             : "Add pre-formatted text", 
+                    emptyAlert        : "Error: Please fill in the content of pre-formatted text."
                 },
                 codeBlock : {
-                    title             : "添加代码块",                    
-                    selectLabel       : "代码语言：",
-                    selectDefaultText : "请选择代码语言",
-                    otherLanguage     : "其他语言",
-                    unselectedLanguageAlert : "错误：请选择代码所属的语言类型。",
-                    codeEmptyAlert    : "错误：请填写代码内容。"
+                    title             : "Add code block",                    
+                    selectLabel       : "Language:",
+                    selectDefaultText : "Please select language",
+                    otherLanguage     : "Other language",
+                    unselectedLanguageAlert : "Error: Please select the language type the code belongs to.",
+                    codeEmptyAlert    : "Error: Please fill in the code content."
                 },
                 htmlEntities : {
-                    title : "HTML 实体字符"
+                    title : "HTML entities"
                 },
                 help : {
-                    title : "使用帮助"
+                    title : "Help"
                 }
             }
         }
