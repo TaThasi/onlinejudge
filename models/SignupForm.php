@@ -24,8 +24,8 @@ class SignupForm extends Model
             ['studentNumber', 'integer'],
             ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This username has already been taken.'],
             ['username', 'string', 'max' => 16, 'min' => 4],
-            ['username', 'match', 'pattern' => '/^(?!_)(?!.*?_$)(?!\d{4,16}$)[a-z\d_]{4,16}$/i', 'message' => '用户名只能以数字、字母、下划线，且非纯数字，长度在 4 - 16 位之间'],
-            ['username', 'match', 'pattern' => '/^(?!c[\d]+user[\d])/', 'message' => '以c+数字+user+数字作为账户名系统保留'],
+            ['username', 'match', 'pattern' => '/^(?!_)(?!.*?_$)(?!\d{4,16}$)[a-z\d_]{4,16}$/i', 'message' => 'Username can only contain numbers, letters, underscores, and not pure numbers, and the length is between 4 and 16 characters'],
+            ['username', 'match', 'pattern' => '/^(?!c[\d]+user[\d])/', 'message' => 'Use c+number+user+number as the account name system reserved'],
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
@@ -106,7 +106,7 @@ class SignupForm extends Model
             )
             ->setFrom([Yii::$app->setting->get('emailUsername') => Yii::$app->setting->get('ojName')])
             ->setTo($this->email)
-            ->setSubject('帐号注册 - ' . Yii::$app->setting->get('ojName'))
+            ->setSubject('Account registration - ' . Yii::$app->setting->get('ojName'))
             ->send();
     }
 }
