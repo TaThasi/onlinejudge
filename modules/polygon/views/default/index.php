@@ -20,13 +20,12 @@ $this->title = Yii::t('app', 'Polygon System');
 
 <hr>
 <div class="problem-index">
-
     <p>
         <?= Html::a(Yii::t('app', 'Create Problem'), ['/polygon/problem/create'], ['class' => 'btn btn-success']) ?>
     </p>
-
+    <p>
     <?php echo $this->render('/problem/_search', ['model' => $searchModel]); ?>
-
+    </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [

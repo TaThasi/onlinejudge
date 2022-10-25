@@ -14,7 +14,7 @@ $this->title = Yii::t('app', 'Home');
                 text-align: left;
             }
             .slideshow-container {
-                max-width: 80%;
+                max-width: 90%;
                 position: relative;
                 margin: auto;
             }
@@ -125,57 +125,67 @@ $this->title = Yii::t('app', 'Home');
             }
         </script>
         <h3>Giới thiệu về hệ thống</h3>
-            <p>Greenhat Online Judge là hệ thống chấm điểm lập trình trực tuyến được phát triển bởi Khoa Công nghệ thông tin - Trường Đại học Kỹ thuật Hậu cần CAND.</p>
-            <p>Mã nguồn chương trình (viết bằng ngôn ngữ C, C++, Java, Python,...) sẽ được hệ thống tự động biên dịch thành chương trình để kiểm tra tính chính xác thông qua các bộ dữ liệu có sẵn.</p>
+            <p style="text-align: justify;">Greenhat Online Judge là hệ thống chấm điểm lập trình trực tuyến được phát triển bởi Khoa Công nghệ thông tin - Trường Đại học Kỹ thuật Hậu cần CAND.</p>
+            <p style="text-align: justify;">Mã nguồn chương trình (viết bằng ngôn ngữ C, C++, Java, Python,...) sẽ được hệ thống tự động biên dịch thành chương trình để kiểm tra tính chính xác thông qua các bộ dữ liệu có sẵn.</p>
     </div>
     <div class="col-md-4">
         <div class="blog-main">
+            <h2 class="text-info" style="font-size: 24px;"><span><?=Yii::t('app','Notification')?></span></h2>
+            <?php if (empty($news)): ?>
+                <div class="text-muted" style="font-size: 18px; padding-left: 15px;">No notification.</div>
+            <?php endif; ?>
+
             <?php foreach ($news as $v): ?>
                 <div class="blog-post">
-                    <h2><span><?=Yii::t('app','Notification')?></span></h2>
-                    <h4 class="blog-post-title"><?= Html::a(Html::encode($v['title']), ['/site/news', 'id' => $v['id']]) ?></h4>
+                    <h4 class="blog-post-title" style="font-size: 18px; padding-left: 15px;"><?= Html::a(Html::encode($v['title']), ['/site/news', 'id' => $v['id']]) ?></h4>
                     <p class="blog-post-meta"><span class="glyphicon glyphicon-time"></span> <?= Yii::$app->formatter->asDate($v['created_at']) ?></p>
                 </div>
             <?php endforeach; ?>
+            
             <?= \yii\widgets\LinkPager::widget([
                 'pagination' => $pages,
                 ]); ?>
-        </div>
-        <?php if (!empty($contests)): ?>
             <hr>
+            <h2 class="text-info" style="font-size: 24px;"><span><?=Yii::t('app','Recent Contest')?></span></h2>
+            <?php if (empty($contest)): ?>
+                <div class="text-muted" style="font-size: 18px; padding-left: 15px;">No contest.</div>
+            <?php endif; ?>
+            
             <div class="sidebar-module">
-                <h2><?= Yii::t('app','Recent Contests')?></h2>
                 <ol class="list-unstyled">
                     <?php foreach ($contests as $contest): ?>
                         <li>
-                            <h4 class="blog-post-title"><?= Html::a(Html::encode($contest['title']), ['/contest/view', 'id' => $contest['id']]) ?></h4>
+                            <h4 class="blog-post-title" style="font-size: 18px; padding-left: 15px;"><?= Html::a(Html::encode($contest['title']), ['/contest/view', 'id' => $contest['id']]) ?></h4>
                         </li>
                     <?php endforeach; ?>
                 </ol>
             </div>
-        <?php endif; ?>
-        <?php if (!empty($discusses)): ?>
+            <hr>
+            <h2 class="text-info" style="font-size: 24px;"><span><?=Yii::t('app','Recent Discussion')?></span></h2>
+            <?php if (empty($discuss)): ?>
+                <div class="text-muted" style="font-size: 18px; padding-left: 15px;">No discussion</div>
+            <?php endif; ?>
+            
             <div class="sidebar-module">
-                <h2>Recent Discussion</h2>
-                    <ol class="list-unstyled">
-                        <?php foreach ($discusses as $discuss): ?>
-                            <li class="index-discuss-item">
-                                <div>
-                                    <?= Html::a(Html::encode($discuss['title']), ['/discuss/view', 'id' => $discuss['id']]) ?>
-                                </div>
-                                <small class="text-muted">
-                                    <span class="glyphicon glyphicon-user"></span>
-                                    <?= Html::a(Html::encode($discuss['nickname']), ['/user/view', 'id' => $discuss['username']]) ?>
+                <ol class="list-unstyled">
+                    <?php foreach ($discusses as $discuss): ?>
+                        <li class="index-discuss-item">
+                            <div>
+                                <?= Html::a(Html::encode($discuss['title']), ['/discuss/view', 'id' => $discuss['id']]) ?>
+                            </div>
+                            <small class="text-muted">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <?= Html::a(Html::encode($discuss['nickname']), ['/user/view', 'id' => $discuss['username']]) ?>
                                     &nbsp;•&nbsp;
                                     <span class="glyphicon glyphicon-time"></span> <?= Yii::$app->formatter->asRelativeTime($discuss['created_at']) ?>
                                     &nbsp;•&nbsp;
                                     <?= Html::a(Html::encode($discuss['ptitle']), ['/problem/view', 'id' => $discuss['pid']]) ?>
-                                </small>
-                            </li>
-                        <?php endforeach; ?>
-                    </ol>
-                </div>
-        <?php endif; ?>
+                            </small>
+                        </li>
+                    <?php endforeach; ?>
+                </ol>
+            </div>
+        </div>
     </div>
 </div>
 
