@@ -267,7 +267,7 @@ install_onlinejudge(){
 
     /usr/sbin/useradd -m -u 1536 judge
     cd /home/judge/
-    git clone https://github.com/Greenhat1998/onlinejudge
+    git clone https://github.com/Ta-Thais/onlinejudge
 
     config_onlinejudge
     if check_sys packageManager yum; then
